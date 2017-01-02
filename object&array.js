@@ -337,6 +337,12 @@ function makeArray(arrayLike) {
 //局限，不够灵
 
 //es6时代。find() findIndex();
+//补充经典的数组使用方法
+//1、拼接表格
+//2、自定义标签传值
+
+
+
 
 
 
