@@ -347,8 +347,50 @@ function makeArray(arrayLike) {
 
 
 
+//Set&Map
+//set
+//值的集合（值得类型可以是任意的）
+//创建
+var set = new Set();
+//或者
+//var set = new Set([1, 2, 3]);
+//添加
+set.add(1);
+set.add(2);
+set.add(3);
+//删除
+set.delete(1);
+//全部清除
+set.clear();
+//set的长度
+set.size;
+//是否存在某一个值
+set.has(2);
 
 
+
+//set vs array
+//1、可以互相转换
+//set -> array
+var set = new set([1, 2, 3]);
+var array = [...set];
+//array -> set
+set = new set(array);
+
+//2、set里面的每一个值是唯一的，不允许重复
+//不允许重复，那么就涉及到值的比较
+//set里面判断两个值是否一样的规则是
+//基本和===全等差不多
+//区别在于 认为 NaN 与 NaN相等
+
+
+//weakset
+
+
+
+
+//map
+//
 
 
 

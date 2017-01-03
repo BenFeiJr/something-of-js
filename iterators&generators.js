@@ -76,6 +76,20 @@ for (let city of iterableCitys) {
 //3、nodelist的
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //spread operators (...)
 //扩展运算符
 //目前为止，我们在三个地方见到了这个操作符
