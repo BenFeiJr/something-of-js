@@ -77,7 +77,7 @@ var student = {
 //well-know symbols
 //内置的Symbol
 //Symbol.iterator
-//...
+//等
 
 
 

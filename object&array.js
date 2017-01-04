@@ -353,7 +353,7 @@ function makeArray(arrayLike) {
 //创建
 var set = new Set();
 //或者
-//var set = new Set([1, 2, 3]);
+//var set = new Set(任意的iterable的值);
 //添加
 set.add(1);
 set.add(2);
@@ -380,17 +380,70 @@ set = new set(array);
 //2、set里面的每一个值是唯一的，不允许重复
 //不允许重复，那么就涉及到值的比较
 //set里面判断两个值是否一样的规则是
-//基本和===全等差不多
+//基本和===全等差不多(Object.is())
 //区别在于 认为 NaN 与 NaN相等
 
 
 //weakset
+//也是值的集合，但是这个值，只能是对象
+//创建
+var weakset = new WeakSet();
+var name = {};
+weakset.add(name);
+weakset.has(name);
+weakset.delete(name);
 
+//weakset vs set
+//1、值必须是对象
+//2、不可迭代，所以用不了for of 循环，也用不了keys()和values()
+//3、没有forEach方法
+//4、没有size属性
 
 
 
 //map
+//键值对的集合
+//创建
+var map = new Map();
+//或者var map = new Map([['name': 'didi'], ['age': '17']]);
+//添加
+map.set('name', 'didi');
+//获取
+map.get('name');
+//检测是否存在
+map.has('name');
+//删除某一项
+map.delete('name');
+//删除全部
+map.clear();
+//map长度
+map.size;
+
+
+//map vs object
+//1、map的key的类型可以是任何类型，甚至object
+//2、no prototype
 //
+
+
+
+//weakmap
+//键值对的集合，但是这个键必须是非null对象
+//创建
+var weakmap = new WeakMap();
+//添加
+var name = {};
+weakmap.set(name, 'didi');
+//检测
+weakmap.has(name);
+//获取
+weakmap.get(name);
+//删除
+weakmap.delete(name);
+
+//weakmap vs map
+//1、键必须是非null object
+
 
 
 
