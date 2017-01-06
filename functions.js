@@ -3,11 +3,15 @@
  * functions
  */
 
+//介绍 default 和 unnamed时可以从两方面入手
+//js中对函数的参数不做限制，也就是说，在调用时可以传入少于或者多余 声明时的 形参的个数
+//先看一下少于的情况
+
 /**
  * default parameter values
  *
  */
-
+//少于的时候就会想着给它加一个默认值
 //es5时代解法
 function getSomeData(url, timeout, callback) {
     timeout = timeout || 3000;
@@ -90,9 +94,7 @@ function getSomeData(url, timeout = void(0)) {
 getSomeData('./aa');
 
 
-//介绍 default 和 unnamed时可以从两方面入手
-//js中对函数的参数不做限制，也就是说，在调用时可以传入少于或者多余 声明时的 形参的个数
-//少于时的情况见上方
+
 //多余时的情况见下方
 //
 //
@@ -258,8 +260,11 @@ console.log(arrowFnDemo());
  * 箭头函数与正经函数表达式的区别
  */
 
-//no this bindings, can not change this
-//this的值是由最近的父级作用域的this决定的
+//1、no this、arguments bindings,这些值是由最近的父级作用域的对应值决定的 
+//2、不能用new方法来调用
+//3、没有原型属性
+//2、can not change this
+//
 let page;
 /*page = {
     title: 'es6',
@@ -306,10 +311,6 @@ page.init();
 
 arrowFnDemo = () => {return this};
 console.log(arrowFnDemo());
-
-//no arguments object
-
-//cannit be called with new, no prototype
 
 
 

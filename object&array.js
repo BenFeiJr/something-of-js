@@ -309,6 +309,8 @@ console.log(arr[1]);
 //会创建一个数组，数组的每一项对应每一个参数
 
 
+
+
 //类数组对象 -》 数组
 //es5时代
 function makeArray(arrayLike) {
@@ -327,19 +329,41 @@ function makeArray(arrayLike) {
 
 
 //es6时代
-//Array.from() 接受两个参数
+//Array.from()
 //
 //
 
 
 //找到数组中的特定的某一项
 //es5时代 indexOf() lastIndexOf()
-//局限，不够灵
+//局限，不够灵活
 
 //es6时代。find() findIndex();
-//补充经典的数组使用方法
+//补充数组使用方法
 //1、拼接表格
+var keys = Array.from($('th')).map(function(th) {
+    return $(th).attr('data-key');
+});
+
+
+
 //2、自定义标签传值
+var oldVal = '1,2,3';
+var newVal = '2,5,6';
+addVal = newVal.split(',').filter(function (item, index) {
+    return item !== '';
+}).filter(function (item, index) {
+    return oldVal.split(',').find(function (old_item, old_index) {
+        return item === old_item;
+    }) == null;
+}).join();
+reduceVal = oldVal.split(',').filter(function (item, index) {
+    return item !== '';
+}).filter(function (item, index) {
+    return newVal.split(',').find(function (new_item, new_index) {
+        return item === new_item;
+    }) == null;
+}).join();
 
 
 
