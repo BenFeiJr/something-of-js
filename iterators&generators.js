@@ -1,9 +1,7 @@
 //Iterators and Generators
 //迭代器和生成器
 
-//迭代器解决的是for循环的问题
-//1、得额外定义变量来定位位置
-//2、
+
 
 //迭代器
 //迭代器是一个对象
@@ -100,8 +98,6 @@ for (let city of iterableCitys) {
 //1、保存函数调用时多传的参数值，此时叫做rest parameters
 //2、保存数组解构赋值时剩余的数组项，此时叫做rest items
 //3、将一个可迭代的值按照默认的迭代方式返回所有的value值，此时叫做spread operators
-
-
 
 
 
