@@ -13,6 +13,9 @@ var b = 2;
 var [a, b] = [1, 2];
 var {a, b} = {a: 1, b: 2};
 
+var firstName = user.baseInfo.firstName;
+
+
 //1、批量赋值
 //2、避免深层的访问对象属性
 
@@ -146,6 +149,7 @@ let firstLovedCity = response.data.lovedCity[0];*/
 //
 
 
+
 //es6时代的方案：
 let {
     data = {
@@ -156,6 +160,24 @@ let {
 } = response;
 //缺点：
 //还是要进行判断
+
+var response = {
+        name: '1',
+        orderList: 2,
+        lovedCity: 3
+    }
+
+function getData1(response) {
+    let name = response.name;
+    let orderList = response.orderList;
+    let lovedCity = response.lovedCity;
+    console.log(name + orderList + lovedCity);
+}
+
+function getData2(response) {
+    let {name, orderList, lovedCity} = response;
+    console.log(name + orderList + lovedCity);
+}
 
 console.log(data)
 /*console.log(name);
@@ -198,12 +220,49 @@ var eMsg = function(text, {delay = 0, timer = 3000} = {}) {
 };
 
 
+//1
+var publicFn = {};
+(function() {
+    window.publicFn.submitBaseIfnoForm = function() {};
+
+
+})();
+
+//2
+(function() {
+    function submitFollowForm() {}
+
+    submitBaseIfnoForm();
+})();
+
+var baseInfo = {
+    userId: '12',
+    submitForm() {}
+};
+
+baseInfo = (function() {
+    var userId = 12;
+    function submitForm() {}
+
+    return {
+        submitForm: submitForm
+    }
+})();
+
+var follow = {
+    userId: '12',
+    submitForm() {
+        baseInfo.submitForm();
+    }
+}
+
+follow.submitForm();
+baseInfo.submitForm();
 
 
 
-
-
-
+<script src="a.js"></script>
+<script src="jquery.js"></
 
 
 
